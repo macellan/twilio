@@ -1,0 +1,52 @@
+{
+    "name": "macellan/twilio",
+    "description": "Twilio SMS notification channel for Laravel",
+    "homepage": "https://macellan.net",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Arif Demir",
+            "email": "cwepicentre@gmail.com",
+            "homepage": "https://github.com/epicentre",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Macellan\\Twilio\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Macellan\\Twilio\\Tests\\": "tests"
+        }
+    },
+    "require": {
+        "php": "^8.0",
+        "illuminate/notifications": "^8.0|^9.0|^10.0",
+        "illuminate/support": "^8.0|^9.0|^10.0",
+        "twilio/sdk": "^7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.5",
+        "phpunit/phpunit": "^10.1"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test:coverage": "vendor/bin/phpunit --coverage-text",
+        "test:coverage:html": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Macellan\\Twilio\\TwilioServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
