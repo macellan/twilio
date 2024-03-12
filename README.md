@@ -1,5 +1,9 @@
 # Twilio SMS Notifications Channel for Laravel
 
+![Tests](https://github.com/macellan/twilio/workflows/Tests/badge.svg?branch=main)
+[![Latest Stable Version](https://poser.pugx.org/macellan/twilio/v/stable)](https://packagist.org/packages/macellan/twilio)
+[![Total Downloads](https://poser.pugx.org/macellan/twilio/downloads)](https://packagist.org/packages/macellan/twilio)
+
 This package makes it easy to send sms notifications using [Twilio](https://documentation.twilio.com/docs) with Laravel 8.x, 9.x, 10.x
 
 ## Contents
