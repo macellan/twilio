@@ -1,6 +1,6 @@
 # Twilio SMS Notifications Channel for Laravel
 
-![Tests](https://github.com/macellan/twilio/workflows/Tests/badge.svg?branch=main)
+![Tests](https://github.com/macellan/twilio/actions/workflows/tests.yml/badge.svg)
 [![Latest Stable Version](https://poser.pugx.org/macellan/twilio/v/stable)](https://packagist.org/packages/macellan/twilio)
 [![Total Downloads](https://poser.pugx.org/macellan/twilio/downloads)](https://packagist.org/packages/macellan/twilio)
 
