@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        bootstrap="vendor/autoload.php"
-        backupGlobals="false"
-        colors="true"
-        processIsolation="false"
-        stopOnError="true"
-        stopOnFailure="true"
-        xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
->
-    <testsuites>
-        <testsuite name="Twilio Test Suite">
-            <directory>tests</directory>
-        </testsuite>
-    </testsuites>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         stopOnError="true"
+         stopOnFailure="true"
+         colors="true"
+         bootstrap="vendor/autoload.php"
+         cacheDirectory=".phpunit.cache"
+         executionOrder="depends,defects"
+         beStrictAboutCoverageMetadata="true"
+         beStrictAboutOutputDuringTests="true"
+         failOnRisky="true"
+         failOnWarning="true">
+<testsuites>
+    <testsuite name="Twilio Test Suite">
+        <directory>tests</directory>
+    </testsuite>
+</testsuites>
+
+<source>
+    <include>
+        <directory>./src</directory>
+    </include>
+</source>
 </phpunit>

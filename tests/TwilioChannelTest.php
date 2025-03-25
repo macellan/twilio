@@ -19,7 +19,7 @@ class TwilioChannelTest extends TestCase
 
     private array $config;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -41,7 +41,7 @@ class TwilioChannelTest extends TestCase
 
         $channel = new TwilioChannel($twilio);
 
-        $channel->send(new TestNotifiable(), new TestSmsNotification());
+        $channel->send(new TestNotifiable, new TestSmsNotification);
 
         $twilio->shouldHaveReceived('sendSmsMessage');
     }
@@ -59,7 +59,7 @@ class TwilioChannelTest extends TestCase
 
         $channel = new TwilioChannel($twilio);
 
-        $channel->send(new TestNotifiable(), new TestSmsStringNotification());
+        $channel->send(new TestNotifiable, new TestSmsStringNotification);
 
         $twilio->shouldHaveReceived('sendSmsMessage');
     }
@@ -76,7 +76,7 @@ class TwilioChannelTest extends TestCase
 
         $channel = new TwilioChannel($twilio);
 
-        $channel->send(new TestNotifiable(), new TestSmsNotification());
+        $channel->send(new TestNotifiable, new TestSmsNotification);
     }
 
     public function test_can_not_send_notification_with_sandbox_mode(): void
@@ -89,7 +89,7 @@ class TwilioChannelTest extends TestCase
 
         $channel = new TwilioChannel($twilio);
 
-        $channel->send(new TestNotifiable(), new TestSmsNotification());
+        $channel->send(new TestNotifiable, new TestSmsNotification);
 
         $twilio->shouldNotHaveReceived('sendSmsMessage');
     }
@@ -105,7 +105,7 @@ class TwilioChannelTest extends TestCase
 
         $notification = Mockery::mock(TestSmsNotification::class);
 
-        $channel->send(new TestNotifiable(), $notification);
+        $channel->send(new TestNotifiable, $notification);
 
         $notification->shouldNotHaveReceived('toTwilio');
     }

@@ -1,0 +1,12 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+    level: 8
+    phpVersion: 80300
+    paths:
+        - src
+    tmpDir: build/phpstan
+    ignoreErrors:
+        - '#Call to an undefined method Illuminate\\Notifications\\Notification::toTwilio#'
+        - '#Call to an undefined method object::routeNotificationFor#'

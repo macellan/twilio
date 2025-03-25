@@ -9,6 +9,6 @@ class TestSmsNotification extends Notification
 {
     public function toTwilio(): TwilioSmsMessage
     {
-        return (new TwilioSmsMessage('Test sms message body'));
+        return new TwilioSmsMessage('Test sms message body');
     }
 }

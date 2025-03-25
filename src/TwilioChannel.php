@@ -26,8 +26,9 @@ class TwilioChannel
             return;
         }
 
-        /** @var TwilioSmsMessage $message */
+        /** @var TwilioSmsMessage|string $message */
         $message = $notification->toTwilio($notifiable);
+
         if (is_string($message)) {
             $message = new TwilioSmsMessage($message);
         }
@@ -55,10 +56,10 @@ class TwilioChannel
         }
     }
 
-    private function log(string $message, string $level = 'info', array $context = []): void
+    private function log(string $message): void
     {
         if ($this->twilio->getConfig()->isDebug()) {
-            Log::log($level, $message, $context);
+            Log::log('info', $message);
         }
     }
 }

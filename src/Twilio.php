@@ -24,7 +24,7 @@ class Twilio
     public function sendSmsMessage(TwilioSmsMessage $smsMessage): MessageInstance
     {
         return $this->client->messages->create(
-            $smsMessage->getTo(),
+            (string) $smsMessage->getTo(),
             [
                 'body' => $smsMessage->getBody(),
                 'from' => $smsMessage->getFrom() ?? $this->config->getFrom(),

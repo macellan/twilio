@@ -11,11 +11,12 @@ use Twilio\Rest\Client;
 
 class TwilioServiceProvider extends ServiceProvider
 {
-    public function register()
+    public function register(): void
     {
+        //
     }
 
-    public function boot()
+    public function boot(): void
     {
         $this->app->bind(TwilioConfig::class, function () {
             $config = config('services.sms.twilio');
