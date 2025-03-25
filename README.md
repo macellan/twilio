@@ -4,7 +4,7 @@
 [![Latest Stable Version](https://poser.pugx.org/macellan/twilio/v/stable)](https://packagist.org/packages/macellan/twilio)
 [![Total Downloads](https://poser.pugx.org/macellan/twilio/downloads)](https://packagist.org/packages/macellan/twilio)
 
-This package makes it easy to send sms notifications using [Twilio](https://documentation.twilio.com/docs) with Laravel 8.x, 9.x, 10.x
+This package makes it easy to send sms notifications using [Twilio](https://documentation.twilio.com/docs) with Laravel 10.x, 11.x, 12.x
 
 ## Contents
 
@@ -56,7 +56,7 @@ use Macellan\Twilio\TwilioSmsMessage;
 
 class TestNotification extends Notification
 {
-    public function via($notifiable)
+    public function via($notifiable): array
     {
         return ['twilio'];
     }
@@ -71,7 +71,7 @@ class TestNotification extends Notification
 In your notifiable model, make sure to include a routeNotificationForSms() method, which returns a phone number.
 
 ```php
-public function routeNotificationForSms()
+public function routeNotificationForSms(): string
 {
     return $this->phone;
 }
